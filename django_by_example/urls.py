@@ -19,11 +19,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-
+    url(r'^images/', include('images.urls', namespace='images')),
     url(r'^', include('account.urls')),
-    # url(r'^logout/$', 'django.contrib.auth.views.logout', name='logout'),
-    # url(r'^logout-then-login/$', 'django.contrib.auth.views.logout_then_login', name='logout_then_login'),
     url(r'^admin/', admin.site.urls),
+
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

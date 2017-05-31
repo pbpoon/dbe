@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'account',
     'django.contrib.admin',
     'django_forms_bootstrap',
+    'images',
 ]
 
 MIDDLEWARE = [

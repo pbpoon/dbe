@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap_tags %}
+
+{% block title %}Bookmark an image{% endblock %}
+
+{% block content %}
+    <h1>Bookmark an image</h1>
+    <div class="col-md-8 pull-left">
+        <img src="{{ request.GET.url }}" alt="">
+    </div>
+    <form class="pull-left" action="." method="post">
+        {{ form|as_bootstrap_inline }}
+        {% csrf_token %}
+        <input type="submit" value="Bookmark it!">
+    </form>
+{% endblock %}
